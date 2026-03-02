@@ -1,0 +1,24 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: dark square with rounded corners -->
+  <rect width="512" height="512" rx="96" fill="#0a0a0a"/>
+
+  <!-- K in dark green (#1a5c38 = KALA color), full letter -->
+  <text x="256" y="400"
+    font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
+    font-weight="900"
+    font-size="390"
+    fill="#1a5c38"
+    text-anchor="middle">K</text>
+
+  <!-- Right half of K overdrawn in bright green (#7dc41a = SEC color) via clipPath -->
+  <clipPath id="right-half">
+    <rect x="256" y="0" width="256" height="512"/>
+  </clipPath>
+  <text x="256" y="400"
+    font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
+    font-weight="900"
+    font-size="390"
+    fill="#7dc41a"
+    text-anchor="middle"
+    clip-path="url(#right-half)">K</text>
+</svg>

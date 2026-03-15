@@ -55,8 +55,8 @@
         html { scroll-behavior: smooth; }
         body { background-color: #0a0a0a; color: #B0B0B0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
         h1 { color: #F0F0F0 !important; letter-spacing: -0.02em; }
-        h2 { color: #F0F0F0 !important; letter-spacing: -0.01em; }
-        h3 { color: #E8E8E8 !important; }
+        h2 { color: #e0e0e0 !important; letter-spacing: -0.01em; }
+        h3 { color: #4d9439 !important; }
         h4 { color: #D0D0D0 !important; }
         p { line-height: 1.65; }
         p.font-semibold, p.font-bold { color: #D8D8D8 !important; }
@@ -97,10 +97,49 @@
     <main>
 
         <!-- Hero -->
-        <section class="px-4 bg-[#0a0a0a]" style="padding-top:100px;padding-bottom:80px;">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="font-black mb-6 leading-tight" style="font-size:clamp(32px,5vw,56px);">
-                    Technical execution layer<span style="color:#4d9439; display:block;">for security firms</span>
+        <section class="px-4 bg-[#0a0a0a]" style="padding-top:100px;padding-bottom:80px;position:relative;overflow:hidden;">
+            <!-- Background: radial glow -->
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:600px;background:radial-gradient(ellipse at center, rgba(50,134,67,0.22) 0%, transparent 68%);pointer-events:none;"></div>
+            <!-- Background: interlocking gears -->
+            <svg viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.22;pointer-events:none;">
+                <!-- Left gear body -->
+                <circle cx="420" cy="250" r="130" stroke="#328643" stroke-width="1.5" fill="rgba(50,134,67,0.05)"/>
+                <circle cx="420" cy="250" r="90"  stroke="#328643" stroke-width="1"   fill="rgba(50,134,67,0.06)"/>
+                <circle cx="420" cy="250" r="30"  stroke="#328643" stroke-width="1.5" fill="rgba(50,134,67,0.15)"/>
+                <!-- Left gear teeth (12 teeth) -->
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(0   420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(30  420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(60  420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(90  420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(120 420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(150 420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(180 420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(210 420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(240 420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(270 420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(300 420 250)"/>
+                <rect x="406" y="108" width="28" height="22" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(330 420 250)"/>
+                <!-- Right gear body (slightly smaller, offset to mesh) -->
+                <circle cx="750" cy="250" r="100" stroke="#328643" stroke-width="1.5" fill="rgba(50,134,67,0.05)"/>
+                <circle cx="750" cy="250" r="68"  stroke="#328643" stroke-width="1"   fill="rgba(50,134,67,0.06)"/>
+                <circle cx="750" cy="250" r="24"  stroke="#328643" stroke-width="1.5" fill="rgba(50,134,67,0.15)"/>
+                <!-- Right gear teeth (10 teeth, offset 18° to mesh) -->
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(18  750 250)"/>
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(54  750 250)"/>
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(90  750 250)"/>
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(126 750 250)"/>
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(162 750 250)"/>
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(198 750 250)"/>
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(234 750 250)"/>
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(270 750 250)"/>
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(306 750 250)"/>
+                <rect x="737" y="138" width="26" height="20" rx="3" stroke="#328643" stroke-width="1.2" fill="rgba(50,134,67,0.1)" transform="rotate(342 750 250)"/>
+            </svg>
+            <div class="max-w-4xl mx-auto text-center" style="position:relative;z-index:1;">
+                <h1 class="font-black mb-6 leading-tight" style="font-size:clamp(36px,5.5vw,60px);line-height:1.15;">
+                    <span style="color:#4d9439;">Technical Execution Layer</span><br>
+                    <span style="color:#f0f0f0;">For Security Firms</span>
                 </h1>
                 <p class="text-lg max-w-2xl mx-auto mb-10" style="color:#B0B0B0;line-height:1.7;">
                     We attack. Partners defend. Together we close the loop.
@@ -126,7 +165,7 @@
         <!-- Who This Is For -->
         <section class="py-24 bg-[#141414] border-y border-[#2a2a2a]">
             <div class="max-w-5xl mx-auto px-4 text-center">
-                <h2 class="font-extrabold mb-3" style="font-size:clamp(24px,3.5vw,32px);">Who this is for</h2>
+                <h2 class="font-extrabold mb-3" style="font-size:clamp(24px,3.5vw,32px);">Who This Is For</h2>
                 <p class="text-[#B0B0B0] max-w-2xl mx-auto mb-14">We work with firms who already have client relationships and need reliable technical execution</p>
                 <div class="grid md:grid-cols-3 gap-6">
                     <!-- Global Consulting Firms -->
@@ -171,7 +210,7 @@
         <!-- Partnership Models -->
         <section class="py-24 bg-[#0a0a0a]">
             <div class="max-w-5xl mx-auto px-4">
-                <h2 class="font-black text-center mb-3" style="font-size:clamp(28px,4.5vw,42px);line-height:1.2;">Two&#8209;way partnerships</h2>
+                <h2 class="font-extrabold text-center mb-3" style="font-size:clamp(24px,3.5vw,32px);">Two-Way Partnerships</h2>
                 <p class="text-[#B0B0B0] text-center mb-6">One integrated outcome</p>
                 <div class="max-w-3xl mx-auto mb-10 bg-[#141414] border border-[#2a2a2a] rounded-2xl p-6 text-center">
                     <p class="text-[#B0B0B0] text-sm leading-relaxed mb-2">We work with licensed assessors, blue&#8209;team specialists, and consulting firms in two directions:</p>
@@ -191,7 +230,7 @@
                                     <path d="M5 8H13M5 11H9" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/>
                                 </svg>
                             </div>
-                            <h3 class="font-bold text-lg" style="color:#328643 !important;">We Execute Under Your Brand</h3>
+                            <h3 class="font-bold text-lg" style="color:#4d9439 !important;">We Execute Under Your Brand</h3>
                         </div>
                         <p class="text-[#555] text-xs mb-6">White-label red teaming · Full-scope execution</p>
                         <p class="text-xs font-bold uppercase tracking-wide mb-3" style="color:#328643;">What we offer you:</p>
@@ -202,7 +241,7 @@
                             <li class="flex items-start gap-2"><span class="text-[#328643] flex-shrink-0 mt-0.5">✓</span> Findings, reports, and remediation guidance under your brand</li>
                             <li class="flex items-start gap-2"><span class="text-[#328643] flex-shrink-0 mt-0.5">✓</span> Fixed cost per engagement – you set your margin</li>
                         </ul>
-                        <p class="text-xs mb-4" style="color:#555;">Best for: Licensed assessors, consultancies, and security firms needing technical execution</p>
+                        <p class="text-xs mb-4" style="color:#888888;">Best for: Licensed assessors, consultancies, and security firms needing technical execution</p>
                         <a href="mailto:partner@kalasec.com?subject=White%20Label%20Inquiry" class="inline-block text-center px-6 py-3 rounded-xl border border-[#328643] font-semibold text-sm transition-all duration-200 hover:bg-[#328643]/10 hover:-translate-y-0.5" style="color:#328643;">
                             Inquire about white-label →
                         </a>
@@ -217,7 +256,7 @@
                                     <path d="M6.5 7.5L8 9L11.5 5.5" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
-                            <h3 class="font-bold text-lg" style="color:#E8E8E8 !important;">Let's Cover More Ground Together</h3>
+                            <h3 class="font-bold text-lg" style="color:#4d9439 !important;">Let's Cover More Ground Together</h3>
                         </div>
                         <p class="text-[#555] text-xs mb-6">Integrated partner network · Two&#8209;way capabilities</p>
                         <p class="text-xs font-bold uppercase tracking-wide mb-2" style="color:#555;">What you can offer us:</p>
@@ -233,7 +272,7 @@
                             <li class="flex items-start gap-2"><span class="text-[#555] flex-shrink-0 mt-0.5">·</span> AI&#8209;enabled executive impersonation testing</li>
                             <li class="flex items-start gap-2"><span class="text-[#555] flex-shrink-0 mt-0.5">·</span> Technical findings for your blue&#8209;team clients</li>
                         </ul>
-                        <p class="text-xs mb-4" style="color:#555;">Best for: Licensed assessors, blue&#8209;team specialists, fraud detection firms, compliance advisors</p>
+                        <p class="text-xs mb-4" style="color:#888888;">Best for: Licensed assessors, blue&#8209;team specialists, fraud detection firms, compliance advisors</p>
                         <a href="mailto:partner@kalasec.com?subject=Partnership%20Inquiry" class="inline-block text-center px-6 py-3 rounded-xl border border-[#2a2a2a] text-[#F0F0F0] font-semibold text-sm transition-all duration-200 hover:border-[#328643]/40 hover:-translate-y-0.5">
                             Discuss partnership →
                         </a>
@@ -246,34 +285,34 @@
         <!-- Why Partner -->
         <section class="py-24 bg-[#141414] border-y border-[#2a2a2a]">
             <div class="max-w-5xl mx-auto px-4 text-center">
-                <h2 class="font-extrabold mb-14" style="font-size:clamp(24px,3.5vw,32px);">Why work with us</h2>
+                <h2 class="font-extrabold mb-14" style="font-size:clamp(24px,3.5vw,32px);">Why Work With Us</h2>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-[#0d1f1a] border border-[#328643]/30 rounded-2xl p-7 text-left">
                         <div class="w-11 h-11 bg-[#1a2e1a] rounded-xl flex items-center justify-center mb-5">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3V7M11 15V19M3 11H7M15 11H19" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="11" r="4" stroke="#328643" stroke-width="1.5"/></svg>
                         </div>
-                        <h3 class="font-bold text-lg mb-3">AI-powered speed</h3>
+                        <h3 class="font-bold text-lg mb-3">AI-Powered Speed</h3>
                         <p class="text-[#B0B0B0] text-sm leading-relaxed">Assessments in 1 – 2 weeks, not months. Your client gets faster results without sacrificing depth</p>
                     </div>
                     <div class="bg-[#0d1f1a] border border-[#328643]/30 rounded-2xl p-7 text-left">
                         <div class="w-11 h-11 bg-[#1a2e1a] rounded-xl flex items-center justify-center mb-5">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2C7 2 4 5 4 9C4 11 5 13 7 14.5L11 20L15 14.5C17 13 18 11 18 9C18 5 15 2 11 2Z" stroke="#328643" stroke-width="1.5"/><path d="M8 9L10 11L14 7" stroke="#328643" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </div>
-                        <h3 class="font-bold text-lg mb-3">Human-verified findings</h3>
+                        <h3 class="font-bold text-lg mb-3">Human-Verified Findings</h3>
                         <p class="text-[#B0B0B0] text-sm leading-relaxed">No false positives handed to your clients. Your reputation stays intact</p>
                     </div>
                     <div class="bg-[#141414] border border-[#2a2a2a] rounded-2xl p-7 text-left">
                         <div class="w-11 h-11 bg-[#1a2e1a] rounded-xl flex items-center justify-center mb-5">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="#328643" stroke-width="1.5"/><path d="M6 8C7 6 9 5.5 11 6.5C13 7.5 14.5 7 15.5 8.5" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><path d="M5 13C7 12 9 12.5 11 14C13 15.5 15 15 17 13.5" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
                         </div>
-                        <h3 class="font-bold text-lg mb-3">Regional expertise</h3>
+                        <h3 class="font-bold text-lg mb-3">Regional Expertise</h3>
                         <p class="text-[#B0B0B0] text-sm leading-relaxed">Deep operational experience across Southeast Asia. Not just generic global tooling</p>
                     </div>
                     <div class="bg-[#141414] border border-[#2a2a2a] rounded-2xl p-7 text-left">
                         <div class="w-11 h-11 bg-[#1a2e1a] rounded-xl flex items-center justify-center mb-5">
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="10" width="14" height="9" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M7 10V7C7 5 9 3 11 3C13 3 15 5 15 7V10" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="14.5" r="1.5" fill="#328643"/></svg>
                         </div>
-                        <h3 class="font-bold text-lg mb-3">Confidential &amp; brand-safe</h3>
+                        <h3 class="font-bold text-lg mb-3">Confidential &amp; Brand-Safe</h3>
                         <p class="text-[#B0B0B0] text-sm leading-relaxed">We operate under your brand or as a silent partner. Your client relationship stays yours</p>
                     </div>
                 </div>
@@ -283,13 +322,13 @@
         <!-- How It Works -->
         <section class="py-24 bg-[#0a0a0a]">
             <div class="max-w-5xl mx-auto px-4 text-center">
-                <h2 class="font-extrabold mb-14" style="font-size:clamp(24px,3.5vw,32px);">How it works</h2>
+                <h2 class="font-extrabold mb-14" style="font-size:clamp(24px,3.5vw,32px);">How It Works</h2>
                 <div class="flex flex-col md:flex-row gap-6 max-w-5xl mx-auto items-stretch">
                     <div class="relative text-left flex flex-col flex-1 min-h-[280px] bg-[#141414] border border-[#2a2a2a] rounded-2xl p-6">
                         <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1a2e1a] mb-5">
                             <span class="text-[#328643] font-bold text-lg">1</span>
                         </div>
-                        <h3 class="font-bold text-base mb-2">Reach out</h3>
+                        <h3 class="font-bold text-base mb-2">Reach Out</h3>
                         <p class="text-[#B0B0B0] text-sm leading-relaxed">Tell us about your firm and what you're looking for</p>
                         <a href="mailto:partner@kalasec.com" class="mt-auto text-sm hover:underline" style="color:#4d9439;">partner@kalasec.com</a>
                     </div>
@@ -321,7 +360,7 @@
         <!-- Capabilities (What we deliver for partners) -->
         <section class="py-20 bg-[#141414] border-y border-[#2a2a2a] text-center">
             <div class="max-w-4xl mx-auto px-4">
-                <h2 class="font-extrabold mb-10" style="font-size:clamp(24px,3.5vw,32px);">What we deliver for partners</h2>
+                <h2 class="font-extrabold mb-10" style="font-size:clamp(24px,3.5vw,32px);">What We Deliver for Partners</h2>
                 <div class="mx-auto max-w-2xl">
                 <div class="flex flex-col items-center">
                 <ul class="space-y-4 list-none">
@@ -368,7 +407,7 @@
         <!-- Partner Inquiry Form -->
         <section id="inquiry" class="py-24 bg-[#0a0a0a] scroll-mt-16">
             <div class="max-w-2xl mx-auto px-4">
-                <h2 class="font-extrabold text-center mb-3" style="font-size:clamp(24px,3.5vw,36px);">Partner Inquiry</h2>
+                <h2 class="font-extrabold text-center mb-3" style="font-size:clamp(24px,3.5vw,32px);">Partner Inquiry</h2>
                 <p class="text-[#B0B0B0] text-center mb-12">Tell us about your firm and what you're looking for. We'll respond within 1 business day</p>
                 <form action="https://formspree.io/f/PARTNER_FORM_ID" method="POST" class="space-y-5">
                     <div class="grid md:grid-cols-2 gap-5">
@@ -428,7 +467,7 @@
         <!-- FAQ -->
         <section class="py-24 bg-[#141414] border-y border-[#2a2a2a]">
             <div class="max-w-3xl mx-auto px-4">
-                <h2 class="font-extrabold text-center mb-14" style="font-size:clamp(24px,3.5vw,32px);">Common questions</h2>
+                <h2 class="font-extrabold text-center mb-14" style="font-size:clamp(24px,3.5vw,32px);">Common Questions</h2>
                 <div class="space-y-3">
 
                     <details class="bg-[#0a0a0a] border border-[#2a2a2a] rounded-xl overflow-hidden">
@@ -457,7 +496,7 @@
                             <svg class="chevron flex-shrink-0 ml-4" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </summary>
                         <div class="px-6 pb-5 text-[#B0B0B0] text-sm leading-relaxed">
-                            We deliver the findings and remediation guidance. For blue-team implementation we can refer you to trusted partners in our network
+                            We deliver findings and remediation guidance. For blue-team implementation we can refer trusted partners in our network
                         </div>
                     </details>
 
@@ -467,7 +506,7 @@
                             <svg class="chevron flex-shrink-0 ml-4" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </summary>
                         <div class="px-6 pb-5 text-[#B0B0B0] text-sm leading-relaxed">
-                            Yes. Our adversarial findings complement fraud detection work well. Reach out at <a href="mailto:partner@kalasec.com" style="color:#4d9439;">partner@kalasec.com</a> to discuss
+                            Yes. Our adversarial findings complement fraud detection work well. Reach out at <a href="mailto:partner@kalasec.com" style="color:#4d9439;">partner@kalasec.com</a>
                         </div>
                     </details>
 
@@ -477,7 +516,7 @@
                             <svg class="chevron flex-shrink-0 ml-4" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </summary>
                         <div class="px-6 pb-5 text-[#B0B0B0] text-sm leading-relaxed">
-                            No. Partnerships are non-exclusive and engagement-based.
+                            No. Partnerships are non-exclusive and engagement-based
                         </div>
                     </details>
 
@@ -487,7 +526,7 @@
                             <svg class="chevron flex-shrink-0 ml-4" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="#555" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </summary>
                         <div class="px-6 pb-5 text-[#B0B0B0] text-sm leading-relaxed">
-                            Terms are agreed directly with each partner based on engagement type and volume. Reach out to discuss
+                            Terms are agreed directly with each partner. Reach out to discuss
                         </div>
                     </details>
 
@@ -504,7 +543,7 @@
                             <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center flex-shrink-0">
                                 <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><rect x="4" y="10" width="14" height="9" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M7 10V7C7 5 9 3 11 3C13 3 15 5 15 7V10" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="14.5" r="1.5" fill="#328643"/></svg>
                             </div>
-                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#E8E8E8 !important;">Strict Confidentiality</h3>
+                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#4d9439 !important;">Strict Confidentiality</h3>
                         </div>
                         <p class="text-[#B0B0B0] text-sm">Client engagements protected by strict confidentiality</p>
                     </div>
@@ -513,46 +552,107 @@
                             <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center flex-shrink-0">
                                 <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="#328643" stroke-width="1.5"/><path d="M11 2C9 5 8 7.5 8 11C8 14.5 9 17 11 20" stroke="#328643" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M11 2C13 5 14 7.5 14 11C14 14.5 13 17 11 20" stroke="#328643" stroke-width="1.5" fill="none" stroke-linecap="round"/><line x1="2" y1="11" x2="20" y2="11" stroke="#328643" stroke-width="1.5"/></svg>
                             </div>
-                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#E8E8E8 !important;">Proven Experience</h3>
+                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#4d9439 !important;">Proven Experience</h3>
                         </div>
                         <p class="text-[#B0B0B0] text-sm">Security testing experience across financial institutions and regulated sectors</p>
+                    </div>
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6 text-left">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#328643" stroke-width="1.5"/><circle cx="11" cy="11" r="4" stroke="#328643" stroke-width="1.5"/><circle cx="11" cy="11" r="1.5" fill="#328643"/></svg>
+                            </div>
+                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#4d9439 !important;">Independent Testing</h3>
+                        </div>
+                        <p class="text-[#B0B0B0] text-sm">No vendor relationships that influence what we find or report</p>
+                    </div>
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6 text-left">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><rect x="4" y="10" width="14" height="9" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M7 10V7C7 5 9 3 11 3C13 3 15 5 15 7" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            </div>
+                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#4d9439 !important;">No Vendor Lock-In</h3>
+                        </div>
+                        <p class="text-[#B0B0B0] text-sm">Findings are yours — no obligation to purchase remediation services</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA -->
         <!-- Where To Go Next -->
-        <section style="padding:80px 24px; background:#111111; text-align:center;">
+        <section style="padding:80px 24px; background:#111111;">
+          <div style="max-width:900px; margin:0 auto; text-align:center;">
             <h2 style="color:#e0e0e0; font-size:32px; font-weight:800; margin-bottom:8px;">Where To Go Next</h2>
-            <p style="color:#b0b0b0; font-size:15px; margin-bottom:48px;">Each page is built for a different conversation</p>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:1000px; margin:0 auto;">
-                <div style="background:#141414; border-radius:12px; padding:28px; text-align:left; display:flex; flex-direction:column;">
-                    <h4 style="color:#e0e0e0; font-weight:700; margin:0 0 8px;">For Buyers</h4>
-                    <p style="color:#b0b0b0; font-size:14px; line-height:1.7; flex:1;">Product, cloud, AI, and executive impersonation testing. Fixed scope, outcome-aligned</p>
-                    <a href="/" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block;">Explore Services →</a>
+            <p style="color:#888888; font-size:15px; margin-bottom:48px;">Each page is built for a different conversation</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;">
+
+              <div style="background:#141414; border-radius:12px; padding:24px; display:flex; flex-direction:column;">
+                <div style="width:36px; height:36px; background:#1a2e1a; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#328643" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                 </div>
-                <div style="background:#141414; border-radius:12px; padding:28px; text-align:left; display:flex; flex-direction:column;">
-                    <h4 style="color:#e0e0e0; font-weight:700; margin:0 0 8px;">Compliance-Ready</h4>
-                    <p style="color:#b0b0b0; font-size:14px; line-height:1.7; flex:1;">Pre-compliance assessments with regulatory mapping and evidence packages</p>
-                    <a href="/compliance" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block;">Compliance page →</a>
+                <h4 style="color:#4d9439; font-weight:700; margin:0 0 10px; text-align:left;">For Buyers</h4>
+                <p style="color:#b0b0b0; font-size:14px; line-height:1.7; text-align:left; flex:1; margin:0;">Product, cloud, AI, and executive impersonation testing. Fixed scope, outcome-aligned</p>
+                <a href="/" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block; text-align:left;">Explore Services →</a>
+              </div>
+
+              <div style="background:#141414; border-radius:12px; padding:24px; display:flex; flex-direction:column;">
+                <div style="width:36px; height:36px; background:#1a2e1a; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#328643" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
-                <div style="background:#141414; border-radius:12px; padding:28px; text-align:left; display:flex; flex-direction:column;">
-                    <h4 style="color:#e0e0e0; font-weight:700; margin:0 0 8px;">Why We Exist</h4>
-                    <p style="color:#b0b0b0; font-size:14px; line-height:1.7; flex:1;">The AI paradox, the market gap, and how we're built for this moment</p>
-                    <a href="/why-kalasec" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block;">Read our story →</a>
+                <h4 style="color:#4d9439; font-weight:700; margin:0 0 10px; text-align:left;">Compliance-Ready</h4>
+                <p style="color:#b0b0b0; font-size:14px; line-height:1.7; text-align:left; flex:1; margin:0;">Pre-compliance assessments with regulatory mapping and evidence packages</p>
+                <a href="/compliance" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block; text-align:left;">Compliance Page →</a>
+              </div>
+
+              <div style="background:#141414; border-radius:12px; padding:24px; display:flex; flex-direction:column;">
+                <div style="width:36px; height:36px; background:#1a2e1a; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#328643" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
-                <div style="background:#141414; border-radius:12px; padding:28px; text-align:left; display:flex; flex-direction:column;">
-                    <h4 style="color:#e0e0e0; font-weight:700; margin:0 0 8px;">Contact</h4>
-                    <p style="color:#b0b0b0; font-size:14px; line-height:1.7; flex:1;">Ready to start? Request an assessment or reach out directly</p>
-                    <a href="/#contact" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block;">Request Assessment →</a>
+                <h4 style="color:#4d9439; font-weight:700; margin:0 0 10px; text-align:left;">For Partners</h4>
+                <p style="color:#b0b0b0; font-size:14px; line-height:1.7; text-align:left; flex:1; margin:0;">White-label execution, blue-team support, and integrated partnerships</p>
+                <a href="/partners" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block; text-align:left;">Partner With Us →</a>
+              </div>
+
+              <div style="background:#141414; border-radius:12px; padding:24px; display:flex; flex-direction:column;">
+                <div style="width:36px; height:36px; background:#1a2e1a; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#328643" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 </div>
+                <h4 style="color:#4d9439; font-weight:700; margin:0 0 10px; text-align:left;">Why We Exist</h4>
+                <p style="color:#b0b0b0; font-size:14px; line-height:1.7; text-align:left; flex:1; margin:0;">The AI paradox, the market gap, and how we're built for this moment</p>
+                <a href="/why-kalasec" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block; text-align:left;">Read Our Story →</a>
+              </div>
+
             </div>
+          </div>
         </section>
 
-        <section id="contact" class="py-24 bg-[#141414] border-t border-[#2a2a2a] text-center scroll-mt-16">
-            <div class="max-w-2xl mx-auto px-4">
-                <h2 class="font-extrabold mb-4" style="font-size:clamp(28px,4vw,44px);line-height:1.3;">Ready to partner?</h2>
+        <section id="contact" class="scroll-mt-16 text-center" style="padding:96px 16px; background:#0a0a0a; position:relative; overflow:hidden;">
+            <!-- Background: radial glow -->
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse at center, rgba(50,134,67,0.22) 0%, transparent 68%);pointer-events:none;"></div>
+            <!-- Background: network/roadmap SVG -->
+            <svg viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;max-width:1100px;height:auto;opacity:0.22;pointer-events:none;">
+                <path d="M60 180 C120 180 140 100 220 100 C300 100 320 160 420 150 C520 140 540 80 640 80 C720 80 760 140 860 130 C910 125 940 160 960 160" stroke="#328643" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <line x1="220" y1="100" x2="200" y2="240" stroke="#328643" stroke-width="1" stroke-dasharray="5 5"/>
+                <line x1="420" y1="150" x2="440" y2="260" stroke="#328643" stroke-width="1" stroke-dasharray="5 5"/>
+                <line x1="640" y1="80" x2="620" y2="240" stroke="#328643" stroke-width="1" stroke-dasharray="5 5"/>
+                <line x1="860" y1="130" x2="880" y2="250" stroke="#328643" stroke-width="1" stroke-dasharray="5 5"/>
+                <circle cx="60" cy="180" r="5" stroke="#328643" stroke-width="1.5"/>
+                <circle cx="220" cy="100" r="9" stroke="#328643" stroke-width="1.5" fill="rgba(50,134,67,0.35)"/>
+                <circle cx="420" cy="150" r="12" stroke="#328643" stroke-width="2" fill="rgba(50,134,67,0.40)"/>
+                <circle cx="640" cy="80" r="9" stroke="#328643" stroke-width="1.5" fill="rgba(50,134,67,0.35)"/>
+                <circle cx="860" cy="130" r="7" stroke="#328643" stroke-width="1.5"/>
+                <circle cx="960" cy="160" r="5" stroke="#328643" stroke-width="1.5"/>
+                <circle cx="200" cy="240" r="4" stroke="#328643" stroke-width="1"/>
+                <circle cx="440" cy="260" r="4" stroke="#328643" stroke-width="1"/>
+                <circle cx="620" cy="240" r="4" stroke="#328643" stroke-width="1"/>
+                <circle cx="880" cy="250" r="4" stroke="#328643" stroke-width="1"/>
+                <line x1="220" y1="100" x2="420" y2="150" stroke="#328643" stroke-width="0.5" stroke-dasharray="3 6" opacity="0.6"/>
+                <line x1="640" y1="80" x2="860" y2="130" stroke="#328643" stroke-width="0.5" stroke-dasharray="3 6" opacity="0.6"/>
+                <circle cx="420" cy="150" r="4" fill="#328643" opacity="0.4"/>
+            </svg>
+            <!-- Content -->
+            <div class="max-w-2xl mx-auto" style="position:relative;z-index:1;">
+                <h2 class="font-extrabold mb-4" style="font-size:clamp(28px,4vw,44px);line-height:1.3;"><span style="color:#4d9439;">Ready to</span><br><span style="color:#f0f0f0;">partner?</span></h2>
                 <p class="text-[#B0B0B0] mb-10 text-base">Tell us about your firm and what you need. We'll respond within 1 business day</p>
                 <a href="mailto:partner@kalasec.com?subject=Partnership%20Inquiry" class="inline-block px-10 py-5 text-lg font-bold rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(77,148,57,0.45)] mb-12" style="background-color:#4d9439;color:#f0f0f0;">
                     Partner Inquiry

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>Kalasec | AI-Enabled Red Teaming &amp; Security Testing</title>
+    <meta name="description" content="AI-enabled red teaming, cloud security testing, and adversarial simulation delivered in 1 – 2 weeks with human-verified findings.">
+    <meta name="keywords" content="penetration testing, adversarial security testing, AI security, cloud security, executive impersonation testing, Southeast Asia security">
+    <link rel="canonical" href="https://kalasec.com">
+    <meta property="og:title" content="Kalasec | AI-Enabled Red Teaming &amp; Security Testing">
+    <meta property="og:description" content="AI-enabled red teaming, cloud security testing, and adversarial simulation delivered in 1 – 2 weeks with human-verified findings.">
+    <meta property="og:url" content="https://kalasec.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kalasec">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <meta property="og:image" content="https://kalasec.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kalasec",
+      "url": "https://kalasec.com",
+      "logo": "https://kalasec.com/logo.png",
+      "description": "AI-enabled red teaming and security testing for modern attack surfaces.",
+      "email": "inquiry@kalasec.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ID"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/kalasec"
+      ]
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#328643',
+                        gold: '#fcd306',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #0a0a0a; color: #B0B0B0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        h1 { color: #F0F0F0 !important; letter-spacing: -0.02em; }
+        h2 { color: #e0e0e0 !important; letter-spacing: -0.01em; }
+        h3 { color: #4d9439 !important; }
+        h4 { color: #D0D0D0 !important; }
+        p { line-height: 1.65; }
+        p.font-semibold, p.font-bold { color: #D8D8D8 !important; }
+        @media (max-width: 640px) {
+            .comparison-table td, .comparison-table th { padding: 10px 8px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body class="antialiased text-base">
+
+    <!-- Navigation -->
+    <header class="py-4 border-b border-[#2a2a2a] bg-[#0a0a0a] sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-10">
+            <a href="/" class="block">
+                <span style="font-weight:800;font-size:24px;letter-spacing:2px;line-height:1.1;">
+                    <span style="color:#4d9439;">KALA</span><span style="color:#328643;">SEC</span>
+                </span>
+                <div style="font-size:10px;color:#fcd306;font-style:italic;letter-spacing:0.5px;margin-top:1px;text-align:left;">No hack. Just sec.</div>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#services" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors">Services</a>
+                <a href="#how-it-works" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors">How It Works</a>
+                <a href="#pricing" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors">Pricing</a>
+                <a href="/compliance" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors">Compliance</a>
+                <a href="/partners" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors">Partners</a>
+                <a href="/why-kalasec" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors">Why Kalasec</a>
+            </nav>
+            <a href="mailto:inquiry@kalasec.com?subject=Assessment%20Request" class="hidden md:inline-block font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(77,148,57,0.35)]" style="background-color:#4d9439;color:#f0f0f0;">
+                Request Assessment
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 ml-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu">
+                <span class="w-6 h-0.5 bg-[#B0B0B0] block"></span>
+                <span class="w-6 h-0.5 bg-[#B0B0B0] block"></span>
+                <span class="w-6 h-0.5 bg-[#B0B0B0] block"></span>
+            </button>
+        </div>
+    </header>
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-b border-[#2a2a2a] px-4 py-5 sticky top-[61px] z-40">
+        <nav class="flex flex-col gap-4 text-sm font-medium mb-5">
+            <a href="#services" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+            <a href="#how-it-works" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">How It Works</a>
+            <a href="#pricing" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Pricing</a>
+            <a href="/compliance" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors">Compliance</a>
+            <a href="/partners" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors">Partners</a>
+            <a href="/why-kalasec" class="text-[#B0B0B0] hover:text-[#F0F0F0] transition-colors">Why Kalasec</a>
+        </nav>
+        <a href="mailto:inquiry@kalasec.com?subject=Assessment%20Request" class="block w-full text-center font-semibold px-5 py-3 rounded-lg text-sm" style="background-color:#4d9439;color:#f0f0f0;">
+            Request Assessment
+        </a>
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="px-4 bg-[#0a0a0a]" style="padding-top:100px;padding-bottom:60px;position:relative;overflow:hidden;">
+            <!-- Background: radial glow -->
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:600px;background:radial-gradient(ellipse at center, rgba(50,134,67,0.22) 0%, transparent 68%);pointer-events:none;"></div>
+            <!-- Background: radar sweep -->
+            <svg viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.22;pointer-events:none;">
+                <!-- Concentric rings -->
+                <circle cx="600" cy="250" r="80"  stroke="#328643" stroke-width="1"   stroke-dasharray="none"/>
+                <circle cx="600" cy="250" r="160" stroke="#328643" stroke-width="0.8" stroke-dasharray="6 6"/>
+                <circle cx="600" cy="250" r="240" stroke="#328643" stroke-width="0.6" stroke-dasharray="5 8"/>
+                <circle cx="600" cy="250" r="330" stroke="#328643" stroke-width="0.5" stroke-dasharray="4 10"/>
+                <circle cx="600" cy="250" r="430" stroke="#328643" stroke-width="0.4" stroke-dasharray="3 12"/>
+                <!-- Cross hairs -->
+                <line x1="600" y1="0"   x2="600" y2="500" stroke="#328643" stroke-width="0.5" stroke-dasharray="3 10" opacity="0.6"/>
+                <line x1="0"   y1="250" x2="1200" y2="250" stroke="#328643" stroke-width="0.5" stroke-dasharray="3 10" opacity="0.6"/>
+                <!-- Sweep line (frozen mid-rotation ~40°) -->
+                <line x1="600" y1="250" x2="860" y2="50" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Sweep fade arc -->
+                <path d="M600 250 L780 82 A220 220 0 0 0 600 30 Z" fill="rgba(50,134,67,0.06)"/>
+                <!-- Center dot -->
+                <circle cx="600" cy="250" r="5" fill="#328643" opacity="0.6"/>
+                <circle cx="600" cy="250" r="10" stroke="#328643" stroke-width="1" fill="rgba(50,134,67,0.2)"/>
+                <!-- Detected blips -->
+                <circle cx="720" cy="140" r="4" fill="#328643" opacity="0.7"/>
+                <circle cx="720" cy="140" r="8" stroke="#328643" stroke-width="0.8" fill="none" opacity="0.4"/>
+                <circle cx="480" cy="320" r="3" fill="#328643" opacity="0.4"/>
+                <circle cx="780" cy="300" r="3" fill="#328643" opacity="0.3"/>
+            </svg>
+            <div class="max-w-4xl mx-auto text-center" style="position:relative;z-index:1;">
+                <h1 class="font-black mb-6 leading-tight" style="font-size:clamp(36px,5.5vw,62px);line-height:1.15;">
+                    <span style="color:#4d9439;">Full Red-Team Coverage</span><br>
+                    <span style="color:#f0f0f0;">Two-Week Delivery</span>
+                </h1>
+                <p class="text-base mb-10" style="letter-spacing:0.01em; color:#b0b0b0; max-width:520px; margin-left:auto; margin-right:auto; line-height:1.7;">
+                    AI Handles Breadth — Our Engineers Handle Depth<br>Fixed Scope, Fixed Price
+                </p>
+                <!-- Bullets -->
+                <ul class="inline-block text-left space-y-3 mb-14">
+                    <li class="flex items-center gap-3 text-[#B0B0B0] text-sm">
+                        <span class="text-accent flex-shrink-0">✓</span> Red&#8209;Team Reconnaissance and Attack&#8209;Path Validation
+                    </li>
+                    <li class="flex items-center gap-3 text-[#B0B0B0] text-sm">
+                        <span class="text-accent flex-shrink-0">✓</span> Human&#8209;Verified Findings – Zero False Positives
+                    </li>
+                    <li class="flex items-center gap-3 text-[#B0B0B0] text-sm">
+                        <span class="text-accent flex-shrink-0">✓</span> 50% Upfront &nbsp;&middot;&nbsp; Final 50% on Validated Findings
+                    </li>
+                    <li class="flex items-center gap-3 text-[#B0B0B0] text-sm">
+                        <span class="text-accent flex-shrink-0">✓</span> Fixed Scope &nbsp;&middot;&nbsp; Defined Timeline
+                    </li>
+                </ul>
+                <!-- Positioning stamp -->
+                <div class="border-t border-[#1a1a1a] pt-8 mx-auto max-w-xl">
+                    <p class="text-xs" style="color:#555;">
+                        Adversarial testing for modern attack surfaces
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Framing -->
+        <section class="bg-[#141414] border-y border-[#2a2a2a]" style="padding-top:60px;padding-bottom:60px;">
+            <div class="max-w-5xl mx-auto px-4">
+                <!-- Section title -->
+                <div class="max-w-5xl mx-auto mb-8 text-center" style="border-bottom:1px solid #2a2a2a;padding-bottom:1rem;margin-bottom:2rem;">
+                    <p style="font-size:1.75rem;font-weight:800;color:#e0e0e0;text-align:center;">Security Reality</p>
+                </div>
+                <!-- Stat -->
+                <div class="text-center mb-10">
+                    <p class="font-black mb-2" style="font-size:clamp(52px,18vw,96px);font-weight:900;color:#fcd306;">$4.88M</p>
+                    <p class="text-[#B0B0B0] text-sm mb-1">average cost of a data breach</p>
+                    <p class="text-xs" style="color:#555;">(IBM Cost of a Data Breach Report 2024)</p>
+                </div>
+                <!-- 3-column risk blocks -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div class="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 text-center">
+                        <p class="font-semibold text-base mb-2" style="color:#fcd306;">Unknown Vulnerabilities</p>
+                        <p class="text-[#B0B0B0] text-sm">Attackers exploit what you haven't tested</p>
+                    </div>
+                    <div class="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 text-center">
+                        <p class="font-semibold text-base mb-2" style="color:#fcd306;">Regulatory Exposure</p>
+                        <p class="text-[#B0B0B0] text-sm">Fines and penalties from non-compliance</p>
+                    </div>
+                    <div class="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-6 text-center">
+                        <p class="font-semibold text-base mb-2" style="color:#fcd306;">Brand &amp; Operational Risk</p>
+                        <p class="text-[#B0B0B0] text-sm">Breaches erode trust and disrupt business</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typical Clients -->
+        <section class="py-16 bg-[#141414] border-y border-[#2a2a2a] text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="font-extrabold mb-12" style="font-size:clamp(24px,3.5vw,32px);">Typical Clients</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-12 h-12 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M2 10H22" stroke="#328643" stroke-width="1.5"/><path d="M6 15H10M14 15H18" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Fintech platforms</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-12 h-12 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 18C4.5 18 2.5 15.5 5 14C5 10 8.5 8 12 9.5C13 7.5 17 7.5 18.5 10.5C21.5 10.5 22.5 14 19.5 16" stroke="#328643" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">SaaS companies</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-12 h-12 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="4" stroke="#328643" stroke-width="1.5"/><path d="M5 20C5 17 8 15 12 15C16 15 19 17 19 20" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><path d="M17 6L19 4M19 4L21 2M19 4L17 2M19 4L21 6" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">AI startups</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-12 h-12 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="14" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M7 7V5C7 3.5 9 2 12 2C15 2 17 3.5 17 5V7" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><path d="M3 12H21" stroke="#328643" stroke-width="1.5"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Enterprise security teams</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contrast + Structural Advantage -->
+        <section class="py-16 bg-[#0a0a0a]">
+            <div class="max-w-4xl mx-auto px-4">
+                <!-- Structured Speed -->
+                <h3 class="font-bold text-center mb-3" style="font-size:40px;color:#b0b0b0;">How We Compare</h3>
+                <p class="text-center mb-10" style="color:#888888;font-size:14px;">Traditional Firms vs. Kalasec — Speed, Method, and Billing</p>
+                <div class="overflow-x-auto" style="max-width:560px;margin:0 auto;">
+                    <table class="comparison-table w-full border-collapse text-center" style="table-layout:fixed;width:100%;">
+                        <colgroup>
+                            <col style="width:50%;">
+                            <col style="width:50%;">
+                        </colgroup>
+                        <thead>
+                            <tr class="border-b border-[#2a2a2a]">
+                                <th style="padding:14px 20px;color:#888888;font-weight:500;width:50%;text-align:center;">Traditional Firms</th>
+                                <th style="padding:14px 20px;color:#4d9439;font-weight:700;background:#0f1f0f;width:50%;text-align:center;">Kalasec</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-[#1a1a1a]">
+                                <td style="padding:14px 20px;color:#888888;font-size:16px;text-align:center;">Tool-driven scanning</td>
+                                <td style="padding:14px 20px;color:#4d9439;font-weight:700;background:#0f1f0f;font-size:16px;text-align:center;">Autonomous adversarial simulation</td>
+                            </tr>
+                            <tr class="border-b border-[#1a1a1a]">
+                                <td style="padding:14px 20px;color:#888888;font-size:16px;text-align:center;">Manual sampling</td>
+                                <td style="padding:14px 20px;color:#4d9439;font-weight:700;background:#0f1f0f;font-size:16px;text-align:center;">Autonomous continuous exploration</td>
+                            </tr>
+                            <tr class="border-b border-[#1a1a1a]">
+                                <td style="padding:14px 20px;color:#888888;font-size:16px;text-align:center;">4 – 8 weeks</td>
+                                <td style="padding:14px 20px;color:#4d9439;font-weight:700;background:#0f1f0f;font-size:16px;text-align:center;">1 – 2 weeks</td>
+                            </tr>
+                            <tr class="border-b border-[#1a1a1a]">
+                                <td style="padding:14px 20px;color:#888888;font-size:16px;text-align:center;">Hourly billing uncertainty</td>
+                                <td style="padding:14px 20px;color:#4d9439;font-weight:700;background:#0f1f0f;font-size:16px;text-align:center;">Fixed scope, transparent pricing</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:14px 20px;color:#888888;font-size:16px;text-align:center;">Limited iteration</td>
+                                <td style="padding:14px 20px;color:#4d9439;font-weight:700;background:#0f1f0f;font-size:16px;text-align:center;">Continuous structured coverage</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-center mt-4 mb-12" style="color:#555;">Our findings help your blue team close the gaps before attackers exploit them</p>
+                <!-- Contrast lines below table -->
+                <div class="border-t border-[#2a2a2a] pt-10 text-center">
+                    <div style="text-align:center; padding:48px 24px; max-width:600px; margin:0 auto;">
+                        <p style="color:#b0b0b0; font-size:18px; font-weight:400; margin-bottom:8px;">
+                            Most Security Firms Sell Hours
+                        </p>
+                        <p style="color:#4d9439; font-size:28px; font-weight:800; letter-spacing:-0.01em;">
+                            We Sell Validated Findings
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="py-24 bg-[#141414] border-y border-[#2a2a2a] scroll-mt-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="font-extrabold mb-3 text-center" style="font-size:clamp(24px,3.5vw,32px);">Services</h2>
+                <p class="text-[#B0B0B0] text-center mb-14">Adversarial testing across your full attack surface</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto" style="max-width:640px;">
+
+                    <!-- Product Attack -->
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6 flex flex-col items-start transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:border-[#328643]/40">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1a2e1a] mb-5">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="3" stroke="#328643" stroke-width="1.5"/><path d="M6 7H16M6 11H13M6 15H10" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-left w-full">Product Attack</h3>
+                        <ul class="space-y-2.5 flex-grow w-full text-left">
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Web apps, APIs, and mobile</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Zero-knowledge or full-access testing</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> OWASP Top 10 coverage</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Clear remediation steps</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cloud Attack -->
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6 flex flex-col items-start transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:border-[#328643]/40">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1a2e1a] mb-5">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M6 17C3.5 17 2 14 4 13C4 9.5 7.5 7.5 11 9C12 7 16 7 17.5 10C20.5 10 21.5 13.5 18.5 15" stroke="#328643" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-left w-full">Cloud Attack</h3>
+                        <ul class="space-y-2.5 flex-grow w-full text-left">
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> AWS, GCP, Azure</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Misconfiguration detection</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Exposed data and over-privileged accounts</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Ranked fix list</li>
+                        </ul>
+                    </div>
+
+                    <!-- AI Attack -->
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6 flex flex-col items-start transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:border-[#328643]/40">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1a2e1a] mb-5">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="#328643" stroke-width="1.5"/><path d="M7.5 11C7.5 8.5 9.2 7 11 7C12.8 7 14.5 8.5 14.5 11" stroke="#328643" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="11" cy="11" r="2" fill="#328643"/></svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-left w-full">AI Attack</h3>
+                        <ul class="space-y-2.5 flex-grow w-full text-left">
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> LLM red teaming</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Prompt injection testing</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Data leakage checks</li>
+                        </ul>
+                    </div>
+
+                    <!-- Complete Package -->
+                    <div class="bg-[#141414] border border-accent/30 rounded-xl p-6 flex flex-col items-start transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] hover:-translate-y-1">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1a2e1a] mb-5">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L20 6V11C20 16.5 16 19.5 11 21C6 19.5 2 16.5 2 11V6L11 2Z" stroke="#328643" stroke-width="1.5"/><path d="M7.5 11L10 13.5L14.5 9" stroke="#328643" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-left w-full">Complete Package</h3>
+                        <ul class="space-y-2.5 flex-grow w-full text-left">
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Product + Cloud + AI combined</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> One comprehensive report</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Full attack surface coverage</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Human-Layer Testing Tier -->
+                <div style="width:100%; padding:40px 0 24px; text-align:center;">
+                    <p style="color:#b0b0b0; font-size:13px; letter-spacing:0.12em; text-transform:uppercase;">
+                        Human-Layer Testing
+                    </p>
+                    <p style="color:#555555; font-size:14px; margin-top:8px;">
+                        Tests the people and processes behind your systems — not just the technology
+                    </p>
+                </div>
+
+                <div style="display:flex; gap:24px; max-width:800px; margin:0 auto; flex-wrap:wrap; justify-content:center;">
+
+                    <!-- Executive Impersonation Testing -->
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6 flex flex-col items-start transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:border-[#328643]/40" style="flex:1; min-width:240px;">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1a2e1a] mb-5">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3C9 3 7.5 4.5 7.5 6.5C7.5 8.5 9 10 11 10C13 10 14.5 8.5 14.5 6.5C14.5 4.5 13 3 11 3Z" stroke="#328643" stroke-width="1.5"/><path d="M5 19C5 16 7.5 14 11 14C14.5 14 17 16 17 19" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><path d="M15 5L18 8" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><path d="M18 5L15 8" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 w-full text-left">Executive Impersonation Testing</h3>
+                        <ul class="space-y-2.5 flex-grow w-full text-left">
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> AI-generated voice and identity simulation</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Targets C-suite and high-trust roles</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Tests human-layer defenses under realistic conditions</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Remote execution — no physical access required</li>
+                        </ul>
+                    </div>
+
+                    <!-- Phishing & Social Engineering -->
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-xl p-6 flex flex-col items-start transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.5)] hover:-translate-y-1 hover:border-[#328643]/40" style="flex:1; min-width:240px;">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1a2e1a] mb-5">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6C3 4.9 3.9 4 5 4H17C18.1 4 19 4.9 19 6V15C19 16.1 18.1 17 17 17H5C3.9 17 3 16.1 3 15V6Z" stroke="#328643" stroke-width="1.5"/><path d="M3 6L11 12L19 6" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 w-full text-left">Phishing &amp; Social Engineering</h3>
+                        <ul class="space-y-2.5 flex-grow w-full text-left">
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Targeted phishing campaigns against real employee targets</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Vishing simulations with AI-assisted scripts</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Click rate, credential capture, and awareness reporting</li>
+                            <li class="flex items-start gap-2 text-[#B0B0B0] text-sm"><span class="text-accent mt-0.5 flex-shrink-0">✓</span> Repeatable — monthly or quarterly cadence available</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="how-it-works" class="py-24 bg-[#0a0a0a] scroll-mt-16">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="font-extrabold text-center mb-3" style="font-size:clamp(24px,3.5vw,32px);">How It Works</h2>
+                <p class="text-[#B0B0B0] text-center mb-16">Clear process &nbsp;&middot;&nbsp; Fixed price &nbsp;&middot;&nbsp; No surprises</p>
+                <div class="flex flex-col md:flex-row gap-6 max-w-5xl mx-auto items-stretch">
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-2xl p-6 flex-1 flex flex-col min-h-[280px]">
+                        <div class="w-14 h-14 bg-[#1a2e1a] rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="5" width="20" height="20" rx="3" stroke="#328643" stroke-width="1.5"/><path d="M9 4V7M19 4V7M4 11H24" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="font-bold text-base mb-2 text-center">Scope Agreement</h3>
+                        <p class="text-[#B0B0B0] text-sm leading-relaxed text-center">Define boundaries, assets, and compliance needs</p>
+                    </div>
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-2xl p-6 flex-1 flex flex-col min-h-[280px]">
+                        <div class="w-14 h-14 bg-[#1a2e1a] rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="8" stroke="#328643" stroke-width="1.5"/><path d="M10 14C10 11.5 12 9.5 14 9.5C16 9.5 18 11.5 18 14" stroke="#328643" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="14" cy="14" r="2.5" fill="#328643"/></svg>
+                        </div>
+                        <h3 class="font-bold text-base mb-2 text-center">Autonomous Simulation</h3>
+                        <p class="text-[#B0B0B0] text-sm leading-relaxed text-center">AI agents test thousands of attack vectors</p>
+                    </div>
+                    <div class="bg-[#141414] border border-[#2a2a2a] rounded-2xl p-6 flex-1 flex flex-col min-h-[280px]">
+                        <div class="w-14 h-14 bg-[#1a2e1a] rounded-2xl flex items-center justify-center mx-auto mb-5">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="8" stroke="#328643" stroke-width="1.5"/><path d="M10.5 14L13 16.5L17.5 11.5" stroke="#328643" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="font-bold text-base mb-2 text-center">Expert Validation</h3>
+                        <p class="text-[#B0B0B0] text-sm leading-relaxed text-center">Analysts verify and contextualise every finding</p>
+                    </div>
+                    <div class="rounded-2xl p-6 flex-1 flex flex-col min-h-[280px]" style="background:#1a2e1a;">
+                        <div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5" style="background:rgba(77,148,57,0.2);">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="5" y="3" width="18" height="22" rx="3" stroke="#328643" stroke-width="1.5"/><path d="M9 9H19M9 13H19M9 17H14" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="font-bold text-base mb-2 text-center" style="color:#4d9439 !important;">Delivery + Guidance</h3>
+                        <p class="text-sm leading-relaxed text-center" style="color:#b0b0b0;">Ranked report with step-by-step remediation (results in 1 – 2 weeks)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Deliver (Capabilities Grid 3×3) -->
+        <section class="py-24 bg-[#141414] border-y border-[#2a2a2a] text-center">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="font-extrabold mb-16" style="font-size:clamp(24px,3.5vw,32px);">What You Get</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-6 md:gap-x-8 gap-y-8 md:gap-y-12 max-w-3xl mx-auto">
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="8" r="4" stroke="#328643" stroke-width="1.5"/><path d="M4 19C4 15.5 7 13 11 13C15 13 18 15.5 18 19" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><path d="M15 6L17 4M17 4L19 2M17 4L15 2M17 4L19 6" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Autonomous discovery</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L20 6V11C20 16.5 16 19.5 11 21C6 19.5 2 16.5 2 11V6L11 2Z" stroke="#328643" stroke-width="1.5"/><path d="M7.5 11L10 13.5L14.5 9" stroke="#328643" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Human-verified analysis</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#328643" stroke-width="1.5"/><path d="M7.5 11L10 13.5L14.5 9" stroke="#328643" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Verified findings only</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#328643" stroke-width="1.5"/><path d="M11 7V11L14 13" stroke="#328643" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Results in 1 – 2 weeks</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="18" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M7 8H15M7 12H15M7 16H11" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Structured executive summaries</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3C9 3 7.5 4.5 7.5 6.5C7.5 8.5 9 10 11 10C13 10 14.5 8.5 14.5 6.5C14.5 4.5 13 3 11 3Z" stroke="#328643" stroke-width="1.5"/><path d="M5 19C5 16 7.5 14 11 14C14.5 14 17 16 17 19" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><path d="M16 4L19 7M16 7L19 4" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">AI-enabled executive impersonation testing</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="10" cy="10" r="6" stroke="#328643" stroke-width="1.5"/><path d="M15 15L19 19" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Real-world adversarial simulation</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="10" width="14" height="9" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M7 10V7C7 5 9 3 11 3C13 3 15 5 15 7V10" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="14.5" r="1.5" fill="#328643"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Strict confidentiality</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="6" width="16" height="12" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M7 6V5C7 3.5 8.5 2 11 2C13.5 2 15 3.5 15 5V6" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><path d="M8 12H14M11 10V14" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </div>
+                        <span class="text-sm font-semibold" style="color:#f0f0f0;">Fixed pricing per engagement</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="py-24 bg-[#0a0a0a] text-center scroll-mt-16">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="font-extrabold mb-3" style="font-size:clamp(24px,3.5vw,32px);">Pricing</h2>
+                <p class="text-[#B0B0B0] mb-12 text-sm">Outcome&#8209;aligned billing &nbsp;&middot;&nbsp; Transparent pricing</p>
+
+                <div style="max-width:480px; margin:0 auto;">
+  <table style="width:100%; border-collapse:collapse;">
+    <thead>
+      <tr style="border-bottom:1px solid #2a2a2a;">
+        <th style="padding:12px 0; text-align:left; color:#b0b0b0; font-weight:500; font-size:14px;">Package</th>
+        <th style="padding:12px 0; text-align:right; color:#b0b0b0; font-weight:500; font-size:14px;">Starting Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #1a1a1a;">
+        <td style="padding:12px 0; color:#e0e0e0; font-weight:600; font-size:15px; text-align:left;">Product Attack</td>
+        <td style="padding:12px 0; color:#4d9439; font-weight:600; font-size:15px; text-align:right;">From $1k</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1a1a1a;">
+        <td style="padding:12px 0; color:#e0e0e0; font-weight:600; font-size:15px; text-align:left;">Cloud Attack</td>
+        <td style="padding:12px 0; color:#4d9439; font-weight:600; font-size:15px; text-align:right;">From $2k</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1a1a1a;">
+        <td style="padding:12px 0; color:#e0e0e0; font-weight:600; font-size:15px; text-align:left;">AI Attack</td>
+        <td style="padding:12px 0; color:#4d9439; font-weight:600; font-size:15px; text-align:right;">From $2k</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1a1a1a;">
+        <td style="padding:12px 0; color:#e0e0e0; font-weight:600; font-size:15px; text-align:left;">Executive Impersonation Testing</td>
+        <td style="padding:12px 0; color:#4d9439; font-weight:600; font-size:15px; text-align:right;">From $2k</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1a1a1a;">
+        <td style="padding:12px 0; color:#e0e0e0; font-weight:600; font-size:15px; text-align:left;">Phishing &amp; Social Engineering</td>
+        <td style="padding:12px 0; color:#4d9439; font-weight:600; font-size:15px; text-align:right;">From $1k</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1a1a1a;">
+        <td style="padding:12px 0; color:#e0e0e0; font-weight:600; font-size:15px; text-align:left;">Complete Package</td>
+        <td style="padding:12px 0; color:#4d9439; font-weight:600; font-size:15px; text-align:right;">From $5k</td>
+      </tr>
+      <tr style="border-top:1px solid #2a2a2a;">
+        <td style="padding:12px 0; color:#888888; font-weight:500; font-size:14px; text-align:left;">Pre-Compliance Add-On <span style="font-size:12px; color:#555;">— applies to any package</span></td>
+        <td style="padding:12px 0; color:#888888; font-weight:500; font-size:14px; text-align:right;">+ $1k</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+                <!-- Footnotes -->
+                <div class="space-y-1 mt-8 mb-10">
+                    <p class="text-xs" style="color:#555;">Pricing in USD &nbsp;&middot;&nbsp; IDR / SGD accepted for local clients</p>
+                    <p class="text-xs" style="color:#555;">50% upfront &nbsp;&middot;&nbsp; final 50% on validated findings</p>
+                </div>
+
+                <!-- Explanatory block -->
+                <div class="text-left max-w-2xl mx-auto bg-[#141414] border border-[#2a2a2a] rounded-xl p-6">
+                    <p class="font-bold text-sm mb-2 text-center" style="color:#4d9439;">Why We Don't Charge Per Finding</p>
+                    <p class="text-[#b0b0b0] text-sm">Per-bug billing is a known loophole — firms pad reports with low-severity findings to inflate invoices. We charge per engagement, not per finding, so our incentive is your actual security posture, not report length</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engagement Scope -->
+        <section class="py-16 bg-[#141414] border-y border-[#2a2a2a] text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="font-extrabold mb-10 text-center" style="font-size:clamp(24px,3.5vw,32px);">Typical Engagement Scope</h2>
+                <div style="display:flex; justify-content:center; padding:0 24px;">
+                  <div style="display:flex; flex-direction:column; gap:14px; align-items:flex-start;">
+                    <span style="color:#b0b0b0; font-size:15px; display:flex; align-items:center; gap:12px;"><span style="color:#4d9439;">✓</span> Target surface defined before testing</span>
+                    <span style="color:#b0b0b0; font-size:15px; display:flex; align-items:center; gap:12px;"><span style="color:#4d9439;">✓</span> Designed to avoid disruption to production systems</span>
+                    <span style="color:#b0b0b0; font-size:15px; display:flex; align-items:center; gap:12px;"><span style="color:#4d9439;">✓</span> Testing window agreed with client security team</span>
+                    <span style="color:#b0b0b0; font-size:15px; display:flex; align-items:center; gap:12px;"><span style="color:#4d9439;">✓</span> Responsible disclosure of findings</span>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credibility -->
+        <section class="py-16 bg-[#141414] border-y border-[#2a2a2a]">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-[#0a0a0a] border border-[#2a2a2a] rounded-xl p-6 text-left">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><rect x="4" y="10" width="14" height="9" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M7 10V7C7 5 9 3 11 3C13 3 15 5 15 7V10" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="14.5" r="1.5" fill="#328643"/></svg>
+                            </div>
+                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#4d9439 !important;">Strict Confidentiality</h3>
+                        </div>
+                        <p class="text-[#B0B0B0] text-sm">Client engagements protected by strict confidentiality</p>
+                    </div>
+                    <div class="bg-[#0a0a0a] border border-[#2a2a2a] rounded-xl p-6 text-left">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="#328643" stroke-width="1.5"/><path d="M11 2C9 5 8 7.5 8 11C8 14.5 9 17 11 20" stroke="#328643" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M11 2C13 5 14 7.5 14 11C14 14.5 13 17 11 20" stroke="#328643" stroke-width="1.5" fill="none" stroke-linecap="round"/><line x1="2" y1="11" x2="20" y2="11" stroke="#328643" stroke-width="1.5"/></svg>
+                            </div>
+                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#4d9439 !important;">Proven Experience</h3>
+                        </div>
+                        <p class="text-[#B0B0B0] text-sm">Security testing experience across financial institutions and regulated sectors</p>
+                    </div>
+                    <div class="bg-[#0a0a0a] border border-[#2a2a2a] rounded-xl p-6 text-left">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#328643" stroke-width="1.5"/><circle cx="11" cy="11" r="4" stroke="#328643" stroke-width="1.5"/><circle cx="11" cy="11" r="1.5" fill="#328643"/></svg>
+                            </div>
+                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#4d9439 !important;">Independent Testing</h3>
+                        </div>
+                        <p class="text-[#B0B0B0] text-sm">No vendor relationships that influence what we find or report</p>
+                    </div>
+                    <div class="bg-[#0a0a0a] border border-[#2a2a2a] rounded-xl p-6 text-left">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#1a2e1a] rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><rect x="4" y="10" width="14" height="9" rx="2" stroke="#328643" stroke-width="1.5"/><path d="M7 10V7C7 5 9 3 11 3C13 3 15 5 15 7" stroke="#328643" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            </div>
+                            <h3 class="font-bold text-sm uppercase tracking-wide" style="color:#4d9439 !important;">No Vendor Lock-In</h3>
+                        </div>
+                        <p class="text-[#B0B0B0] text-sm">Findings are yours — no obligation to purchase remediation services</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engagement Process -->
+        <section class="py-20 bg-[#0a0a0a]">
+            <div class="max-w-4xl mx-auto px-4">
+                <h2 class="font-extrabold text-center mb-14" style="font-size:clamp(24px,3.5vw,32px);">Engagement Process</h2>
+                <div class="flex flex-col md:flex-row gap-6 max-w-4xl mx-auto items-stretch">
+                    <div class="flex flex-col min-h-[200px] bg-[#141414] border border-[#2a2a2a] rounded-2xl p-6 flex-1">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1a2e1a] mb-5 mx-auto">
+                            <span class="font-bold text-base" style="color:#328643;">1</span>
+                        </div>
+                        <h3 class="font-bold text-base mb-2 text-center">Scope Definition</h3>
+                        <p class="text-[#B0B0B0] text-sm leading-relaxed text-center">Target systems and testing window confirmed</p>
+                    </div>
+                    <div class="flex flex-col min-h-[200px] bg-[#141414] border border-[#2a2a2a] rounded-2xl p-6 flex-1">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#1a2e1a] mb-5 mx-auto">
+                            <span class="font-bold text-base" style="color:#328643;">2</span>
+                        </div>
+                        <h3 class="font-bold text-base mb-2 text-center">Adversarial Testing</h3>
+                        <p class="text-[#B0B0B0] text-sm leading-relaxed text-center">Autonomous simulation with human verification</p>
+                    </div>
+                    <div class="flex flex-col min-h-[200px] rounded-2xl p-6 flex-1" style="background:#1a2e1a;">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 mx-auto" style="background:rgba(77,148,57,0.2);">
+                            <span class="font-bold text-base" style="color:#4d9439;">3</span>
+                        </div>
+                        <h3 class="font-bold text-base mb-2 text-center" style="color:#4d9439 !important;">Findings Delivery</h3>
+                        <p class="text-sm leading-relaxed text-center" style="color:#b0b0b0;">Prioritized remediation report and retest options</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Where To Go Next -->
+        <section style="padding:80px 24px; background:#111111;">
+          <div style="max-width:900px; margin:0 auto; text-align:center;">
+            <h2 style="color:#e0e0e0; font-size:32px; font-weight:800; margin-bottom:8px;">Where To Go Next</h2>
+            <p style="color:#888888; font-size:15px; margin-bottom:48px;">Each page is built for a different conversation</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;">
+
+              <div style="background:#141414; border-radius:12px; padding:24px; display:flex; flex-direction:column;">
+                <div style="width:36px; height:36px; background:#1a2e1a; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#328643" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </div>
+                <h4 style="color:#4d9439; font-weight:700; margin:0 0 10px; text-align:left;">For Buyers</h4>
+                <p style="color:#b0b0b0; font-size:14px; line-height:1.7; text-align:left; flex:1; margin:0;">Product, cloud, AI, and executive impersonation testing. Fixed scope, outcome-aligned</p>
+                <a href="/" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block; text-align:left;">Explore Services →</a>
+              </div>
+
+              <div style="background:#141414; border-radius:12px; padding:24px; display:flex; flex-direction:column;">
+                <div style="width:36px; height:36px; background:#1a2e1a; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#328643" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h4 style="color:#4d9439; font-weight:700; margin:0 0 10px; text-align:left;">Compliance-Ready</h4>
+                <p style="color:#b0b0b0; font-size:14px; line-height:1.7; text-align:left; flex:1; margin:0;">Pre-compliance assessments with regulatory mapping and evidence packages</p>
+                <a href="/compliance" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block; text-align:left;">Compliance Page →</a>
+              </div>
+
+              <div style="background:#141414; border-radius:12px; padding:24px; display:flex; flex-direction:column;">
+                <div style="width:36px; height:36px; background:#1a2e1a; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#328643" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h4 style="color:#4d9439; font-weight:700; margin:0 0 10px; text-align:left;">For Partners</h4>
+                <p style="color:#b0b0b0; font-size:14px; line-height:1.7; text-align:left; flex:1; margin:0;">White-label execution, blue-team support, and integrated partnerships</p>
+                <a href="/partners" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block; text-align:left;">Partner With Us →</a>
+              </div>
+
+              <div style="background:#141414; border-radius:12px; padding:24px; display:flex; flex-direction:column;">
+                <div style="width:36px; height:36px; background:#1a2e1a; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#328643" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <h4 style="color:#4d9439; font-weight:700; margin:0 0 10px; text-align:left;">Why We Exist</h4>
+                <p style="color:#b0b0b0; font-size:14px; line-height:1.7; text-align:left; flex:1; margin:0;">The AI paradox, the market gap, and how we're built for this moment</p>
+                <a href="/why-kalasec" style="color:#4d9439; font-size:14px; font-weight:600; text-decoration:none; border-bottom:1px solid #2a5a2a; padding-bottom:2px; margin-top:16px; display:inline-block; text-align:left;">Read Our Story →</a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section id="contact" class="scroll-mt-16 text-center" style="padding:96px 16px; background:#0a0a0a; position:relative; overflow:hidden;">
+
+            <!-- Background: radial glow -->
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse at center, rgba(50,134,67,0.22) 0%, transparent 68%);pointer-events:none;"></div>
+
+            <!-- Background: network/roadmap SVG -->
+            <svg viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;max-width:1100px;height:auto;opacity:0.22;pointer-events:none;">
+                <!-- Main horizontal path -->
+                <path d="M60 180 C120 180 140 100 220 100 C300 100 320 160 420 150 C520 140 540 80 640 80 C720 80 760 140 860 130 C910 125 940 160 960 160" stroke="#328643" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <!-- Branch lines (dashed) -->
+                <line x1="220" y1="100" x2="200" y2="240" stroke="#328643" stroke-width="1" stroke-dasharray="5 5"/>
+                <line x1="420" y1="150" x2="440" y2="260" stroke="#328643" stroke-width="1" stroke-dasharray="5 5"/>
+                <line x1="640" y1="80" x2="620" y2="240" stroke="#328643" stroke-width="1" stroke-dasharray="5 5"/>
+                <line x1="860" y1="130" x2="880" y2="250" stroke="#328643" stroke-width="1" stroke-dasharray="5 5"/>
+                <!-- Main nodes -->
+                <circle cx="60" cy="180" r="5" stroke="#328643" stroke-width="1.5"/>
+                <circle cx="220" cy="100" r="9" stroke="#328643" stroke-width="1.5" fill="rgba(50,134,67,0.35)"/>
+                <circle cx="420" cy="150" r="12" stroke="#328643" stroke-width="2" fill="rgba(50,134,67,0.40)"/>
+                <circle cx="640" cy="80" r="9" stroke="#328643" stroke-width="1.5" fill="rgba(50,134,67,0.35)"/>
+                <circle cx="860" cy="130" r="7" stroke="#328643" stroke-width="1.5"/>
+                <circle cx="960" cy="160" r="5" stroke="#328643" stroke-width="1.5"/>
+                <!-- Branch endpoint nodes -->
+                <circle cx="200" cy="240" r="4" stroke="#328643" stroke-width="1"/>
+                <circle cx="440" cy="260" r="4" stroke="#328643" stroke-width="1"/>
+                <circle cx="620" cy="240" r="4" stroke="#328643" stroke-width="1"/>
+                <circle cx="880" cy="250" r="4" stroke="#328643" stroke-width="1"/>
+                <!-- Small cross-links -->
+                <line x1="220" y1="100" x2="420" y2="150" stroke="#328643" stroke-width="0.5" stroke-dasharray="3 6" opacity="0.6"/>
+                <line x1="640" y1="80" x2="860" y2="130" stroke="#328643" stroke-width="0.5" stroke-dasharray="3 6" opacity="0.6"/>
+                <!-- Inner ring on key nodes -->
+                <circle cx="420" cy="150" r="4" fill="#328643" opacity="0.4"/>
+            </svg>
+
+            <!-- Content -->
+            <div class="max-w-2xl mx-auto" style="position:relative;z-index:1;">
+                <h2 class="font-extrabold mb-4" style="font-size:clamp(28px,4vw,44px);line-height:1.3;"><span style="color:#4d9439;">Let's build your</span><br><span style="color:#f0f0f0;">security roadmap</span></h2>
+                <p class="text-[#B0B0B0] mb-10 text-base">Tell us what you need — we'll respond with a clear scope, methodology, and fixed price</p>
+                <a href="mailto:inquiry@kalasec.com?subject=Assessment%20Request" class="inline-block px-10 py-5 text-lg font-bold rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(77,148,57,0.45)] mb-14" style="background-color:#4d9439;color:#f0f0f0;">
+                    Request Assessment
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Closing line -->
+    <div class="py-6 text-center border-t border-[#2a2a2a] bg-[#0a0a0a]">
+        <p class="text-sm" style="color:#b0b0b0;">Autonomous where possible &nbsp;&middot;&nbsp; Human where it matters</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0a] border-t border-[#2a2a2a] px-4 pt-10 pb-12 text-center">
+        <div class="max-w-6xl mx-auto">
+            <!-- Badges row -->
+            <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-2 mb-6 text-sm">
+                <span style="color:#f0f0f0;">AI&#8209;assisted testing</span>
+                <span style="color:#b0b0b0;">·</span>
+                <span style="color:#f0f0f0;">Human&#8209;verified findings</span>
+                <span style="color:#b0b0b0;">·</span>
+                <span style="color:#f0f0f0;">1 – 2 week assessments</span>
+                <span style="color:#b0b0b0;">·</span>
+                <span style="color:#f0f0f0;">Confidential</span>
+            </div>
+            <!-- Emails row -->
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-3 text-sm" style="color:#b0b0b0;">
+                <span>Inquiry: <a href="mailto:inquiry@kalasec.com" class="hover:underline" style="color:#4d9439;">inquiry@kalasec.com</a></span>
+                <span>Partners: <a href="mailto:partner@kalasec.com" class="hover:underline" style="color:#4d9439;">partner@kalasec.com</a></span>
+            </div>
+            <!-- Legal line -->
+            <p class="text-center text-xs mb-10" style="color:#555;">Security testing performed only with written client authorization</p>
+            <!-- Footer grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="flex flex-col items-center">
+                    <div class="mb-3">
+                        <span style="font-weight:800;font-size:20px;letter-spacing:2px;line-height:1.1;">
+                            <span style="color:#4d9439;">KALA</span><span style="color:#328643;">SEC</span>
+                        </span>
+                        <div style="font-size:10px;color:#fcd306;font-style:italic;letter-spacing:0.5px;margin-top:2px;text-align:left;">No hack. Just sec.</div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-3 text-[#E0E0E0] text-sm">Services</h4>
+                    <ul class="space-y-2 text-sm text-[#555]">
+                        <li><a href="#services" class="hover:text-[#4d9439] transition-colors">Product Attack</a></li>
+                        <li><a href="#services" class="hover:text-[#4d9439] transition-colors">Cloud Attack</a></li>
+                        <li><a href="#services" class="hover:text-[#4d9439] transition-colors">AI Attack</a></li>
+                        <li><a href="#services" class="hover:text-[#4d9439] transition-colors">Executive Impersonation Testing</a></li>
+                        <li><a href="#services" class="hover:text-[#4d9439] transition-colors">Phishing &amp; Social Engineering</a></li>
+                        <li><a href="#services" class="hover:text-[#4d9439] transition-colors">Complete Package</a></li>
+                        <li><a href="/compliance" class="hover:text-[#4d9439] transition-colors">Compliance Preparation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-3 text-[#E0E0E0] text-sm">Company</h4>
+                    <ul class="space-y-2 text-sm text-[#555]">
+                        <li>PT Kalasec Technology Labs</li>
+                        <li>Jakarta, Indonesia</li>
+                        <li><a href="/partners" class="hover:text-[#4d9439] transition-colors">Partners</a></li>
+                        <li><a href="/why-kalasec" class="hover:text-[#4d9439] transition-colors">Why Kalasec</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-[#2a2a2a] pt-8 text-center">
+                <p class="text-xs text-[#444]">© 2026 PT Kalasec Technology Labs. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

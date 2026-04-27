@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KALASEC | Free Security Tools</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#4edea3",
+          "primary-container": "#10b981",
+          "on-primary": "#003824",
+          "on-primary-container": "#00422b",
+          "secondary": "#9ed2b5",
+          "secondary-container": "#21523c",
+          "on-secondary": "#013824",
+          "surface": "#111318",
+          "surface-dim": "#111318",
+          "surface-container-lowest": "#0c0e12",
+          "surface-container-low": "#1a1c20",
+          "surface-container": "#1e2024",
+          "surface-container-high": "#282a2e",
+          "surface-container-highest": "#333539",
+          "surface-variant": "#333539",
+          "surface-bright": "#37393e",
+          "background": "#111318",
+          "on-background": "#e2e2e8",
+          "on-surface": "#e2e2e8",
+          "on-surface-variant": "#bbcabf",
+          "outline": "#86948a",
+          "outline-variant": "#3c4a42",
+          "inverse-surface": "#e2e2e8",
+          "inverse-on-surface": "#2f3035",
+          "inverse-primary": "#006c49",
+          "error": "#ffb4ab",
+          "error-container": "#93000a",
+          "on-error": "#690005",
+          "on-error-container": "#ffdad6",
+          "tertiary": "#ffb3af",
+          "tertiary-container": "#fc7c78",
+          "on-tertiary": "#650911",
+          "on-tertiary-container": "#711419",
+        },
+        borderRadius: {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        fontFamily: {
+          "headline": ["Manrope", "sans-serif"],
+          "body": ["Manrope", "sans-serif"],
+          "label": ["Manrope", "sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body { min-height: 100dvh; }
+  .btn-solid {
+    background-color: #10b981;
+    color: #00422b;
+    font-weight: 800;
+    transition: all 0.2s ease;
+  }
+  .btn-solid:hover {
+    background-color: #328643;
+    transform: scale(1.02);
+  }
+  .btn-border {
+    background-color: transparent;
+    border: 1px solid #10b981;
+    color: #10b981;
+    font-weight: 600;
+    min-height: 44px;
+    transition: all 0.2s ease;
+  }
+  .btn-border:hover {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: #4edea3;
+    transform: scale(1.02);
+  }
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1);
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  .spinner {
+    animation: spin 0.8s linear infinite;
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-[#111318]/80 backdrop-blur-md border-b border-[#e2e2e8]/10 shadow-[0_0_48px_rgba(16,185,129,0.04)]">
+  <div class="flex justify-between items-center px-4 md:px-8 py-4 max-w-7xl mx-auto">
+    <a href="index.html" class="block">
+      <div style="font-weight:800;font-size:22px;letter-spacing:2px;line-height:1.1;">
+        <span style="color:#4d9439;">KALA</span><span style="color:#328643;">SEC</span>
+      </div>
+      <div style="font-size:10px;color:#fcd306;font-style:italic;letter-spacing:0.5px;margin-top:1px;">No hack. Just sec.</div>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-on-surface hover:text-primary-container transition-colors font-headline tracking-tight" href="index.html">Scanner</a>
+      <a class="text-primary-container font-bold border-b-2 border-primary-container pb-1 font-headline tracking-tight" href="#">Tools</a>
+      <a class="text-on-surface hover:text-primary-container transition-colors font-headline tracking-tight" href="index.html#pricing">Pricing</a>
+      <a class="text-on-surface hover:text-primary-container transition-colors font-headline tracking-tight" href="mailto:inquiry@kalasec.com">Contact</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <button class="btn-border px-4 md:px-6 py-2 rounded-lg text-sm md:text-base">Join Waitlist</button>
+      <button id="mobileMenuButton" class="md:hidden p-2 text-on-surface hover:text-primary-container transition-colors">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden bg-surface-container-high border-b border-outline-variant/20 flex flex-col px-4 py-4 gap-4">
+    <a class="text-on-surface hover:text-primary-container transition-colors font-headline" href="index.html">Scanner</a>
+    <a class="text-primary-container font-bold font-headline" href="#">Tools</a>
+    <a class="text-on-surface hover:text-primary-container transition-colors font-headline" href="index.html#pricing">Pricing</a>
+    <a class="text-on-surface hover:text-primary-container transition-colors font-headline" href="mailto:inquiry@kalasec.com">Contact</a>
+  </div>
+</nav>
+
+<main class="pt-20 md:pt-24">
+
+  <!-- Hero -->
+  <header class="flex flex-col items-center text-center px-4 py-16 md:py-20">
+    <span class="text-primary-container font-label text-xs tracking-[0.2em] font-bold uppercase mb-4">Free Tools</span>
+    <h1 class="text-3xl md:text-5xl font-extrabold font-headline tracking-tighter mb-4">Check Before You Click.</h1>
+    <p class="text-on-surface-variant font-body text-base md:text-lg max-w-xl leading-relaxed">
+      Link scanner. File checker. Scam detector. Free, instant, no signup.
+    </p>
+  </header>
+
+  <!-- Tool Card -->
+  <section class="max-w-3xl mx-auto px-4 pb-24">
+    <div class="bg-surface-container rounded-xl border border-outline-variant/20 overflow-hidden shadow-2xl">
+
+      <!-- Tabs -->
+      <div class="flex border-b border-outline-variant/20">
+        <button data-tab="link" class="tab-btn flex-1 py-4 font-label text-sm font-semibold text-primary-container border-b-2 border-primary-container transition-colors">Link Checker</button>
+        <button data-tab="file" class="tab-btn flex-1 py-4 font-label text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors">File Checker</button>
+        <button data-tab="text" class="tab-btn flex-1 py-4 font-label text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors">Scam Text Checker</button>
+      </div>
+
+      <!-- Link Checker Panel -->
+      <div id="panel-link" class="p-6 md:p-8">
+        <!-- Input -->
+        <div class="flex flex-col md:flex-row gap-3 mb-8">
+          <div class="relative flex-grow">
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px]">link</span>
+            <input id="linkInput" type="url"
+              class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg py-3 pl-11 pr-4 text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body text-sm outline-none transition-colors"
+              placeholder="Paste any suspicious URL here..."
+              value="https://secure-login-bank-alert.xyz/verify-account"
+            />
+          </div>
+          <button id="checkLinkBtn" class="btn-solid px-6 py-3 rounded-lg text-sm flex items-center justify-center gap-2 whitespace-nowrap">
+            Check Link
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </button>
+        </div>
+
+        <!-- Loading (hidden by default) -->
+        <div id="linkLoading" class="hidden flex-col items-center justify-center py-10">
+          <div class="spinner w-10 h-10 border-4 border-primary-container/30 border-t-primary-container rounded-full mb-4"></div>
+          <p class="text-primary-container font-bold text-sm">Checking link...</p>
+        </div>
+
+        <!-- Result Card -->
+        <div id="linkResult" class="bg-surface-container-lowest rounded-xl p-5 md:p-6 border border-outline-variant/20">
+          <!-- Risk badge + domain -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-6">
+            <div class="flex items-center gap-3 flex-wrap">
+              <span class="bg-error-container text-error px-3 py-1 rounded-full text-[11px] font-extrabold font-label flex items-center gap-1 uppercase tracking-widest">
+                <span class="material-symbols-outlined text-[13px]" style="font-variation-settings:'FILL' 1;">report</span>
+                High Risk
+              </span>
+              <code class="text-primary-container font-mono text-sm bg-surface-container px-3 py-1 rounded">secure-login-bank-alert.xyz</code>
+            </div>
+            <span class="text-outline font-label text-[10px] uppercase tracking-widest whitespace-nowrap">Scan completed 2 sec ago</span>
+          </div>
+
+          <!-- Findings -->
+          <div class="divide-y divide-outline-variant/20 mb-6">
+            <div class="flex items-center justify-between py-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-error text-[20px]">event_busy</span>
+                <span class="text-sm text-on-surface">Domain registered 3 days ago</span>
+              </div>
+              <span class="text-error font-bold">✗</span>
+            </div>
+            <div class="flex items-center justify-between py-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-error text-[20px]">dangerous</span>
+                <span class="text-sm text-on-surface">Matches phishing database patterns</span>
+              </div>
+              <span class="text-error font-bold">✗</span>
+            </div>
+            <div class="flex items-center justify-between py-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-tertiary-container text-[20px]">directions</span>
+                <span class="text-sm text-on-surface">4 redirects detected (Obfuscation)</span>
+              </div>
+              <span class="text-tertiary-container font-bold">⚠</span>
+            </div>
+            <div class="flex items-center justify-between py-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-tertiary-container text-[20px]">visibility_off</span>
+                <span class="text-sm text-on-surface">Registrant info is hidden (Private Proxy)</span>
+              </div>
+              <span class="text-tertiary-container font-bold">⚠</span>
+            </div>
+            <div class="flex items-center justify-between py-3">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary-container text-[20px]">verified_user</span>
+                <span class="text-sm text-on-surface">SSL Certificate is valid</span>
+              </div>
+              <span class="text-primary-container font-bold">✓</span>
+            </div>
+          </div>
+
+          <!-- AI Explanation -->
+          <div class="bg-surface-container p-4 rounded-lg border-l-4 border-error mb-6">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="material-symbols-outlined text-primary-container text-[18px]" style="font-variation-settings:'FILL' 1;">smart_toy</span>
+              <span class="font-label text-[10px] uppercase tracking-widest text-on-surface">Plain English Explanation</span>
+            </div>
+            <p class="text-sm text-on-surface-variant leading-relaxed">
+              This website is likely a scam. It was created very recently and is designed to look like a banking login page. Multiple redirects are being used to hide where your data is actually going.
+            </p>
+          </div>
+
+          <!-- What to do -->
+          <div class="mb-6">
+            <h4 class="font-label font-semibold text-on-surface text-sm mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-tertiary-container text-[18px]">lightbulb</span>
+              What to do:
+            </h4>
+            <ul class="list-disc list-inside text-sm text-on-surface-variant space-y-1.5 ml-1">
+              <li>Do not enter any personal or financial information.</li>
+              <li>Close the tab immediately.</li>
+              <li>Report this URL to your email provider if it arrived via mail.</li>
+            </ul>
+          </div>
+
+          <!-- Upsell -->
+          <a href="index.html" class="flex items-center justify-between bg-secondary-container/10 border border-secondary-container/30 hover:bg-secondary-container/20 p-4 rounded-lg transition-all group">
+            <span class="text-secondary font-label font-bold text-sm">Own a website? Full infrastructure scan — $29</span>
+            <span class="material-symbols-outlined text-secondary group-hover:translate-x-1 transition-transform text-[20px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- File Checker Panel -->
+      <div id="panel-file" class="hidden p-6 md:p-8">
+        <div class="flex flex-col items-center justify-center py-16 text-center gap-4">
+          <span class="material-symbols-outlined text-primary-container" style="font-size:48px;">upload_file</span>
+          <h3 class="font-headline font-bold text-lg">File Checker</h3>
+          <p class="text-on-surface-variant text-sm max-w-sm leading-relaxed">Scan any file for malware signatures and suspicious behaviour. Launching soon.</p>
+          <button class="btn-border px-6 py-2 rounded-lg text-sm">Join Waitlist for Early Access</button>
+        </div>
+      </div>
+
+      <!-- Scam Text Checker Panel -->
+      <div id="panel-text" class="hidden p-6 md:p-8">
+        <div class="flex flex-col items-center justify-center py-16 text-center gap-4">
+          <span class="material-symbols-outlined text-primary-container" style="font-size:48px;">sms</span>
+          <h3 class="font-headline font-bold text-lg">Scam Text Checker</h3>
+          <p class="text-on-surface-variant text-sm max-w-sm leading-relaxed">Paste any suspicious SMS or email text to detect scam patterns. Launching soon.</p>
+          <button class="btn-border px-6 py-2 rounded-lg text-sm">Join Waitlist for Early Access</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Trust Strip -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 fade-up">
+      <div class="flex items-center gap-4">
+        <div class="shrink-0 w-11 h-11 rounded-full bg-surface-container border border-outline-variant/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary-container text-[20px]">shield</span>
+        </div>
+        <div>
+          <h5 class="font-label font-bold text-sm text-on-surface">Verified Data</h5>
+          <p class="font-label text-[10px] uppercase tracking-widest text-outline">Real-time threat feeds</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="shrink-0 w-11 h-11 rounded-full bg-surface-container border border-outline-variant/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary-container text-[20px]">psychology</span>
+        </div>
+        <div>
+          <h5 class="font-label font-bold text-sm text-on-surface">AI Analysis</h5>
+          <p class="font-label text-[10px] uppercase tracking-widest text-outline">Powered by Claude 3.5</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="shrink-0 w-11 h-11 rounded-full bg-surface-container border border-outline-variant/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary-container text-[20px]">bolt</span>
+        </div>
+        <div>
+          <h5 class="font-label font-bold text-sm text-on-surface">Instant Results</h5>
+          <p class="font-label text-[10px] uppercase tracking-widest text-outline">Under 500ms latency</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-8 md:py-12 px-4 md:px-8 bg-[#111318] border-t border-primary-container/10">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 opacity-80">
+    <div class="text-center md:text-left">
+      <div style="font-weight:800;font-size:16px;letter-spacing:2px;line-height:1.1;">
+        <span style="color:#4d9439;">KALA</span><span style="color:#328643;">SEC</span>
+      </div>
+      <div style="font-size:10px;color:#fcd306;font-style:italic;letter-spacing:0.5px;margin-top:2px;">No hack. Just sec.</div>
+      <div class="font-label text-[10px] uppercase tracking-widest text-on-surface/40 mt-2">© 2026 KALASEC. ALL RIGHTS RESERVED.</div>
+    </div>
+    <div class="flex gap-6 md:gap-8">
+      <a class="font-label text-[10px] uppercase tracking-widest text-primary-container hover:opacity-80 transition-opacity" href="mailto:inquiry@kalasec.com">Bespoke Testing</a>
+      <a class="font-label text-[10px] uppercase tracking-widest text-on-surface/60 hover:text-primary-container transition-colors" href="#">Privacy Policy</a>
+      <a class="font-label text-[10px] uppercase tracking-widest text-on-surface/60 hover:text-primary-container transition-colors" href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const mobileMenuButton = document.getElementById('mobileMenuButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+  }
+
+  // Tab switching
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      tabBtns.forEach(b => {
+        b.classList.remove('text-primary-container', 'border-b-2', 'border-primary-container');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('text-primary-container', 'border-b-2', 'border-primary-container');
+      btn.classList.remove('text-on-surface-variant');
+      document.querySelectorAll('[id^="panel-"]').forEach(p => p.classList.add('hidden'));
+      document.getElementById('panel-' + tab).classList.remove('hidden');
+    });
+  });
+
+  // Link checker — static demo result, pre-launch
+  const checkLinkBtn = document.getElementById('checkLinkBtn');
+  const linkInput = document.getElementById('linkInput');
+  const linkLoading = document.getElementById('linkLoading');
+  const linkResult = document.getElementById('linkResult');
+
+  checkLinkBtn.addEventListener('click', () => {
+    const url = linkInput.value.trim();
+    if (!url) { alert('Please enter a URL to check.'); return; }
+    linkResult.classList.add('hidden');
+    linkLoading.classList.remove('hidden');
+    linkLoading.classList.add('flex');
+    setTimeout(() => {
+      linkLoading.classList.add('hidden');
+      linkLoading.classList.remove('flex');
+      linkResult.classList.remove('hidden');
+    }, 1500);
+  });
+
+  // Fade-up on scroll
+  const fadeEls = document.querySelectorAll('.fade-up');
+  if (fadeEls.length) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    fadeEls.forEach(el => obs.observe(el));
+  }
+</script>
+</body>
+</html>
